@@ -8,15 +8,16 @@ import { DataHandlerService } from 'src/app/service/data-handler.service';
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
-  //
   categories: Category[];
 
-  constructor(private dataHandler: DataHandlerService) {
-    this.categories = this.dataHandler.getCategories();
-  }
+  constructor(private dataHandler: DataHandlerService) {}
 
   // метод вызывается автоматически после инициализации компонента
   ngOnInit(): void {
-    // console.log(this.categories);
+    this.categories = this.dataHandler.getCategories();
+  }
+
+  showTasksByCategory(category: Category) {
+    this.dataHandler.fillTasksByCategory(category);
   }
 }

@@ -9,6 +9,9 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    // чтобы каждый раз не инициализировать prop в class
+    "strictPropertyInitialization": false,
+    //
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,

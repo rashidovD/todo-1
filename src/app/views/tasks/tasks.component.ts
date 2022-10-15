@@ -10,9 +10,9 @@ import { DataHandlerService } from 'src/app/service/data-handler.service';
 export class TasksComponent implements OnInit {
   tasks: Task[];
 
-  constructor(private dataHandler: DataHandlerService) {
-    this.tasks = this.dataHandler.getTasks();
-  }
+  constructor(private dataHandler: DataHandlerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataHandler.tasksSubject.subscribe((tasks) => (this.tasks = tasks));
+  }
 }
