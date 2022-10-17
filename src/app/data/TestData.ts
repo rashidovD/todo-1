@@ -61,5 +61,19 @@ export class TestData {
       completed: false,
       category: TestData.categories[0],
     },
+    {
+      id: 6,
+      title: 'Планировать переезд',
+      priority: TestData.priorities[1],
+      completed: true,
+      category: TestData.categories[3],
+    },
+    {
+      id: 7,
+      title: 'Заняться 1 час в день спортом',
+      priority: TestData.priorities[2],
+      completed: false,
+      // category: TestData.categories[4],
+    },
   ];
 }
