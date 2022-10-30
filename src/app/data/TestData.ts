@@ -75,5 +75,43 @@ export class TestData {
       completed: false,
       // category: TestData.categories[4],
     },
+
+
+    //
+    {
+      id: 8,
+      title: 'Убраться у себя в комнате',
+      priority: TestData.priorities[3],
+      completed: true,
+      category: TestData.categories[7],
+    },
+    {
+      id: 9,
+      title: 'Сходить в парк с семьей',
+      priority: TestData.priorities[0],
+      completed: false,
+      category: TestData.categories[4],
+      date: new Date('2022-10-11'),
+    },
+    {
+      id: 10,
+      title: 'Стать ангуляр разрабом',
+      completed: false,
+      category: TestData.categories[6],
+    },
+    {
+      id: 11,
+      title: 'Планировать переезд',
+      priority: TestData.priorities[2],
+      completed: true,
+      category: TestData.categories[3],
+    },
+    {
+      id: 12,
+      title: 'Заняться 1 час в день спортом',
+      priority: TestData.priorities[2],
+      completed: false,
+      // category: TestData.categories[4],
+    },
   ];
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Category } from 'src/app/model/Category';
 import { DataHandlerService } from 'src/app/service/data-handler.service';
 
@@ -8,7 +8,12 @@ import { DataHandlerService } from 'src/app/service/data-handler.service';
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
+  @Input()
   categories: Category[];
+
+  @Output()
+  selectCategory = new EventEmitter<Category>();
+
   selectedCategory: Category;
 
   constructor(private dataHandler: DataHandlerService) {}
@@ -16,11 +21,22 @@ export class CategoriesComponent implements OnInit {
   // метод вызывается автоматически после инициализации компонента
   ngOnInit(): void {
     // this.categories = this.dataHandler.fillCategories();
-    this.dataHandler.categoriesSubject.subscribe((categories) => this.categories = categories)
+    // this.dataHandler.getAllCategories().subscribe(
+    //   (categories) => (this.categories = categories)
+    // );
   }
 
   showTasksByCategory(category: Category) {
-    this.selectedCategory = category;
-    this.dataHandler.fillTasksByCategory(category);
+    // this.selectedCategory = category;
+    // this.dataHandler.fillTasksByCategory(category);
+
+    if (this.selectedCategory === category) {
+      return;
+    }
+
+    this.selectedCategory = category; // сохраняем выбранную категорию
+
+    // вызываем внешний обработчик и передаем туда выбранную категорию
+    this.selectCategory.emit(this.selectedCategory);
   }
 }

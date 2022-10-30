@@ -1,7 +1,7 @@
 <div class="wrapper">
   <!--  -->
   <!-- Categories Component -->
-  <app-categories></app-categories>
+  <app-categories (selectCategory)="onSelectCategory($event)" [categories]="categories"></app-categories>
 
   <!--  -->
 
@@ -113,7 +113,8 @@
           <div class="col-12">
             <!--  -->
             <!-- Tasks Component -->
-            <app-tasks></app-tasks>
+
+            <app-tasks [tasks]="tasks" (updateTask)="onUpdateTask($event)"></app-tasks>
 
             <!--  -->
           </div>
