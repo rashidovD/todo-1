@@ -63,7 +63,7 @@ export class TestData {
     },
     {
       id: 6,
-      title: 'Планировать переезд',
+      title: 'Кайфануть от души',
       priority: TestData.priorities[1],
       completed: true,
       category: TestData.categories[3],
@@ -112,6 +112,7 @@ export class TestData {
       priority: TestData.priorities[2],
       completed: false,
       // category: TestData.categories[4],
+      date: new Date('2022-11-02'),
     },
   ];
 }
